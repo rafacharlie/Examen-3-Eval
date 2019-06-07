@@ -59,6 +59,7 @@ public class Ejercicio2 {
    */
   private void initialize() {
     frame = new JFrame();
+    frame.setResizable(false);
     frame.setBounds(100, 100, 451, 188);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.getContentPane().setLayout(null);
@@ -94,7 +95,7 @@ public class Ejercicio2 {
       public void actionPerformed(ActionEvent arg0) {
         /* a mano */
         if (Fecha.esFechaValida(textFieldValida.getText())) {
-          JOptionPane.showMessageDialog(null, Fecha.suma1DiaFecha(textFieldValida.getText()));
+          textFieldValida.setText(Fecha.suma1DiaFecha(textFieldValida.getText()));
         } else {
           JOptionPane.showMessageDialog(null, "La fecha debe ser valida primero");
         }
@@ -109,7 +110,7 @@ public class Ejercicio2 {
       public void actionPerformed(ActionEvent e) {
         /* a mano */
         if (Fecha.esFechaValida(textFieldValida.getText())) {
-          JOptionPane.showMessageDialog(null, Fecha.resta1DiaFecha(textFieldValida.getText()));
+          textFieldValida.setText(Fecha.resta1DiaFecha(textFieldValida.getText()));
 
         } else {
           JOptionPane.showMessageDialog(null, "La fecha debe ser valida primero");
@@ -125,7 +126,7 @@ public class Ejercicio2 {
         /* a mano */
         if (Fecha.esFechaValida(textFieldValida.getText())) {
           try {
-            JOptionPane.showMessageDialog(null, Fecha.cuentaDias(textFieldValida.getText()));
+            textFieldValida.setText(Fecha.cuentaDias(textFieldValida.getText()));
 
           } catch (ParseException e1) {
             JOptionPane.showMessageDialog(null, "Formato no valido");
