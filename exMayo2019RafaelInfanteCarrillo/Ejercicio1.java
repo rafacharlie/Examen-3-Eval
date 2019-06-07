@@ -189,7 +189,7 @@ public class Ejercicio1 {
               linea = linea.replaceAll("T", "7");
 
               bw.write(linea); // escribe en el fichero
-              bw.write("\n");
+              bw.newLine();
               resultado += linea + "\n"; // escribe linea a linea en esta variable
 
             }
