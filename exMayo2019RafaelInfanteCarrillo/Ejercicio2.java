@@ -30,7 +30,6 @@ public class Ejercicio2 {
 
   private JFrame frame;
   private JTextField textFieldValida;
-  private JTextField textFieldDias;
 
   /**
    * Launch the application.
@@ -95,7 +94,7 @@ public class Ejercicio2 {
       public void actionPerformed(ActionEvent arg0) {
         /* a mano */
         if (Fecha.esFechaValida(textFieldValida.getText())) {
-          textFieldValida.setText(Fecha.suma1DiaFecha(textFieldValida.getText()));
+          JOptionPane.showMessageDialog(null, Fecha.suma1DiaFecha(textFieldValida.getText()));
         } else {
           JOptionPane.showMessageDialog(null, "La fecha debe ser valida primero");
         }
@@ -110,7 +109,8 @@ public class Ejercicio2 {
       public void actionPerformed(ActionEvent e) {
         /* a mano */
         if (Fecha.esFechaValida(textFieldValida.getText())) {
-          textFieldValida.setText(Fecha.resta1DiaFecha(textFieldValida.getText()));
+          JOptionPane.showMessageDialog(null, Fecha.resta1DiaFecha(textFieldValida.getText()));
+
         } else {
           JOptionPane.showMessageDialog(null, "La fecha debe ser valida primero");
         }
@@ -125,7 +125,7 @@ public class Ejercicio2 {
         /* a mano */
         if (Fecha.esFechaValida(textFieldValida.getText())) {
           try {
-            textFieldDias.setText(Fecha.cuentaDias(textFieldValida.getText()));
+            JOptionPane.showMessageDialog(null, Fecha.cuentaDias(textFieldValida.getText()));
 
           } catch (ParseException e1) {
             JOptionPane.showMessageDialog(null, "Formato no valido");
@@ -138,15 +138,6 @@ public class Ejercicio2 {
     });
     btnDiaHoy.setBounds(295, 108, 129, 23);
     frame.getContentPane().add(btnDiaHoy);
-
-    JLabel lblNewLabel = new JLabel("Dias hasta hoy: ");
-    lblNewLabel.setBounds(10, 78, 102, 14);
-    frame.getContentPane().add(lblNewLabel);
-
-    textFieldDias = new JTextField();
-    textFieldDias.setBounds(129, 75, 132, 20);
-    frame.getContentPane().add(textFieldDias);
-    textFieldDias.setColumns(10);
 
     JButton btnTerminar = new JButton("Terminar");
     btnTerminar.addActionListener(new ActionListener() {
