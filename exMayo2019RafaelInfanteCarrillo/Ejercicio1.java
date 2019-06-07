@@ -77,6 +77,7 @@ public class Ejercicio1 {
    */
   private void initialize() {
     frame = new JFrame();
+    frame.setResizable(false);
     frame.setBounds(100, 100, 446, 300);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.getContentPane().setLayout(null);
@@ -188,6 +189,7 @@ public class Ejercicio1 {
               linea = linea.replaceAll("T", "7");
 
               bw.write(linea); // escribe en el fichero
+              bw.write("\n");
               resultado += linea + "\n"; // escribe linea a linea en esta variable
 
             }
@@ -200,8 +202,8 @@ public class Ejercicio1 {
 
           JOptionPane.showMessageDialog(null, "Programa finalizado con exito");
 
-        } catch (IOException ie) {
-          JOptionPane.showMessageDialog(null, "No se encontro el archivo");
+        } catch (IOException | NullPointerException ie) {
+          JOptionPane.showMessageDialog(null, "No se encontro el archivo o no se ha especificado una ruta.");
 
         }
 
