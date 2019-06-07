@@ -108,6 +108,7 @@ public class Ejercicio1 {
     frame.getContentPane().add(btnFicheroOrigen);
 
     rutaFicheroOrigen = new JTextField();
+    rutaFicheroOrigen.setEditable(false);
     rutaFicheroOrigen.setBounds(21, 49, 390, 20);
     frame.getContentPane().add(rutaFicheroOrigen);
     rutaFicheroOrigen.setColumns(10);
@@ -140,6 +141,7 @@ public class Ejercicio1 {
     frame.getContentPane().add(btnFicheroDestino);
 
     rutaFicheroDestino = new JTextField();
+    rutaFicheroDestino.setEditable(false);
     rutaFicheroDestino.setBounds(21, 105, 390, 20);
     frame.getContentPane().add(rutaFicheroDestino);
     rutaFicheroDestino.setColumns(10);
@@ -150,15 +152,15 @@ public class Ejercicio1 {
     /****************************************************************
      * boton fichero Mezclar
      *************************************************************/
-    btnMezclar = new JButton("Mezclar");
+    btnMezclar = new JButton("Ok");
     btnMezclar.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         
         // mi codigo de programa
 
         try {
-          FileReader leer = new FileReader("C:/Users/Rafael Infante/Desktop/ficherospgnpracticas/ejemplo.txt");
-          FileWriter escribir = new FileWriter("C:/Users/Rafael Infante/Desktop/ficherospgnpracticas/ejemplo2.txt");
+          FileReader leer = new FileReader(ficheroOrigen.getAbsolutePath());
+          FileWriter escribir = new FileWriter(ficheroDestino.getAbsolutePath());
 
           BufferedReader br = new BufferedReader(leer);
           BufferedWriter bw = new BufferedWriter(escribir);
